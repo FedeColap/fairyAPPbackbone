@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fairy tales for children Info</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <nav> 
+        <ul class="navUl">
+            <button id="bInfo"><li>Info</li></button>
+            <button id="bRead"><li>Read</li></button>
+            <button id="bHear"><li>Hear</li></button>
+            <button id="bList"><li>List</li></button>
+        </ul>
+    </nav>
+    <main>
+        <section class="info displayLater-I">
+            <h1>Find a fairy tale</h1>
+
+            <form id="js-form-I">
+                <label for="search-term-I">Enter the name of a Fairy Tale</label>
+                <input type="text" name="search-term-I" id="js-search-term-I" required>
+                <input type="submit" value="Go!">
+            </form>
+
+            <p id="js-error-message-I" class="error-message-I"></p>
+            <section id="results-I" class="hidden">
+            <h2>Search results</h2>
+            <ul id="results-list-I">
+            </ul>
+            </section>
+        </section>
+
+        <section class="read displayLater-R">
+                <h1>Wanna read a tale?</h1>
+        
+                <form id="js-form-R">
+                    <label for="search-term-R">Click on the link</label>
+                    <input type="submit" value="Go!">
+                </form>
+        
+                <p id="js-error-message-R" class="error-message-R"></p>
+                <section id="results-R" class="hidden">
+                <h2>Search results</h2>
+                <ul id="results-list-R">
+                </ul>
+                </section>
+        </section>
+
+        <section class="hear displayLater-H">
+                <h1>Listen!</h1>
+        
+                <form id="js-form-H">
+                    <label for="search-term-H">Pick A Tale!</label>
+                    <input type="submit" value="Go!">
+                </form>
+        
+                <p id="js-error-message-H" class="error-message-H"></p>
+                <section id="results-H" class="hidden">
+                <h2>Search results</h2>
+                <ul id="results-list-H">
+                </ul>
+                </section>
+        </section>
+
+        <section class="list displayLater-L">
+                <h1>List</h1>
+        
+                <form id="js-form-L">
+                    <label for="search-term-L">See the list of Grimm's tales</label>
+                    <input type="submit" value="See!">
+                </form>
+        
+                <p id="js-error-message-L" class="error-message-L"></p>
+                <section id="results-L" class="hidden">
+                <h2>Search results</h2>
+                <ul id="results-list-L">
+                </ul>
+                </section>
+        </section>
+    </main>
+    <script src="index.js"></script>
+    <script src="indexFairyLink.js"></script>
+    <script src="indexVoxRandom.js"></script>
+    
+    <script src="indexVox.js"></script>
+</body>
+</html>
