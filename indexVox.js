@@ -211,16 +211,16 @@
     $('#results-list-L').empty();
     //display the results section  
     $('#results-L').removeClass('hidden');
-
+    //call the function to associate audio links
     listenAudio(responseJson, STORE);
+
     // iterate through the items array
     for (let i = 0; i < responseJson.sections.length; i++){
-      
       $('#results-list-L').append(
-        `<li>
+        `<li class="listResult">
         <a href="${responseJson.sections[i].web}" target="_blank"> <h3>${responseJson.sections[i].title}</h3></a>
         </li>`
-      )};
+    )};
     
   };
   
@@ -239,7 +239,6 @@
     };
     const queryString = formatQueryParams(params)
     const url = searchURL + '?' + queryString;
-  
         console.log(url);
   
     fetch(url)
@@ -256,17 +255,29 @@
   }
   
   function watchForm() {
-    $('#js-form-L').submit(event => {
+    $('#js-form-L').submit(event => {  
       event.preventDefault();
       getVoxLibriList();
     });
   }
   
   function displayNow() {
+    
     $('#bList').click(function() {
+        $('.opening').addClass('hidden');
         event.preventDefault();
-        $('.list').removeClass('displayLater-L');  
-       
+        $('.displayLater-L').css("display", "block");  
+        
+        (function clearOthers () {
+            if ($('.displayLater-R').css("display", "block")) {
+              $('.displayLater-R').css("display", "none");
+            } if ($('.displayLater-H').css("display", "block")) {
+              $('.displayLater-H').css("display", "none");
+            } if ($('.displayLater-I').css("display", "block")) {
+              $('.displayLater-I').css("display", "none");
+            }
+        })(); 
+          
         watchForm();
     });
   }

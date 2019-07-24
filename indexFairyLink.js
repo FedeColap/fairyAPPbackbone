@@ -12,7 +12,6 @@ function formatQueryParams(params) {
 }
 
 function displayResults(responseJson) {
-
     console.log(responseJson);
     console.log(typeof(responseJson));
   // console.log(responseJson.parse.externallinks);
@@ -28,11 +27,11 @@ function displayResults(responseJson) {
   //display the results section  
   $('#results-R').removeClass('hidden');
 
-    $('#results-list-R').append(
-      `<li>
-      <a href="${responseJson.parse.externallinks[randNum]}" target="_blank"> <h3>Here is your story to read!</h3></a>
-      </li>`
-    );
+  $('#results-list-R').append(
+    `<li class="listResult">
+    <a href="${responseJson.parse.externallinks[randNum]}" target="_blank" class="randomLink"> <h3>The story we have selected is the n. ${randNum}</h3></a>
+    </li>`
+  );
 
 };
 
@@ -70,11 +69,23 @@ function watchForm() {
 }
 
 function displayNow() {
+  
   $('#bRead').click(function() {
-      event.preventDefault();
-      $('.read').removeClass('displayLater-R');  
+    $('.opening').addClass('hidden');
+    event.preventDefault();
+    $('.displayLater-R').css("display", "block");  
+
+    (function clearOthers () {
+        if ($('.displayLater-I').css("display", "block")) {
+          $('.displayLater-I').css("display", "none");
+        } if ($('.displayLater-H').css("display", "block")) {
+          $('.displayLater-H').css("display", "none");
+        } if ($('.displayLater-L').css("display", "block")) {
+          $('.displayLater-L').css("display", "none");
+        }
+    })();  
      
-      watchForm();
+    watchForm();
   });
 }
 

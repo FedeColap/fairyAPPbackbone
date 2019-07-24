@@ -12,7 +12,6 @@ function formatQueryParams(params) {
 }
 
 function displayResults(responseJson) {
-  
     console.log(responseJson);
     console.log(typeof(responseJson));
   const myResult = responseJson.query.pages;
@@ -24,14 +23,14 @@ function displayResults(responseJson) {
   //display the results section  
   $('#results-I').removeClass('hidden');
 
-    $('#results-list-I').append(
-      `<li>
+  $('#results-list-I').append(
+      `<li class="listResult">
       <p>${pages[0][1].extract}</p>
-      </li>`);
+      </li>`
+  );
 };
 
-function getWikiInfo(searchTerm) {
-    
+function getWikiInfo(searchTerm) {  
   const params = {
     action: 'query',
     format: 'json',
@@ -41,7 +40,6 @@ function getWikiInfo(searchTerm) {
     explaintext: '',
     redirects: 1, 
     titles: searchTerm
-
   };
   const queryString = formatQueryParams(params)
   const url = searchURL + '?' + queryString;
@@ -69,12 +67,26 @@ function watchForm() {
   });
 }
 
+//display the feature after clicking on one of the 4 main buttons
 function displayNow() {
+  
   $('#bInfo').click(function() {
+    //removes the intro
+    $('.opening').addClass('hidden');
       event.preventDefault();
-      $('.info').removeClass('displayLater-I');  
-     
-      watchForm();
+      $('.displayLater-I').css("display", "block");  
+    //clear the <main> form other features
+    (function clearOthers () {
+      if ($('.displayLater-R').css("display", "block")) {
+        $('.displayLater-R').css("display", "none");
+      } if ($('.displayLater-H').css("display", "block")) {
+        $('.displayLater-H').css("display", "none");
+      } if ($('.displayLater-L').css("display", "block")) {
+        $('.displayLater-L').css("display", "none");
+      }
+    })();
+
+    watchForm();
   });
 }
 

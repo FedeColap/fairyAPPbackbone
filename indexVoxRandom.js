@@ -204,7 +204,6 @@
   }
   
   function displayResults(responseJson) {
-    
         console.log(responseJson);
         console.log(typeof(responseJson));
     
@@ -222,12 +221,11 @@
     let i = randNum;
     //display the results section  
     $('#results-H').removeClass('hidden');
-  
-      $('#results-list-H').append(
-        `<li>
-        <a href="${responseJson.sections[i].web}" target="_blank"> <h3>${responseJson.sections[i].title}</h3></a>
+    $('#results-list-H').append(
+        `<li class="listResult">
+        <a href="${responseJson.sections[i].web}" target="_blank" class="randomLink"> <h3>${responseJson.sections[i].title}</h3></a>
         </li>`
-      );
+    );
     
   };
 
@@ -247,7 +245,6 @@
     };
     const queryString = formatQueryParams(params)
     const url = searchURL + '?' + queryString;
-  
         console.log(url);
   
     fetch(url)
@@ -264,17 +261,29 @@
   }
   
   function watchForm() {
-    $('#js-form-H').submit(event => {
+    $('#js-form-H').submit(event => {  
       event.preventDefault();
       getVoxLibriRandom();
     });
   }
   
   function displayNow() {
+    
     $('#bHear').click(function() {
+        $('.opening').addClass('hidden');
         event.preventDefault();
-        $('.hear').removeClass('displayLater-H');  
-       
+        $('.displayLater-H').css("display", "block");  
+
+        (function clearOthers () {
+            if ($('.displayLater-R').css("display", "block")) {
+              $('.displayLater-R').css("display", "none");
+            } if ($('.displayLater-I').css("display", "block")) {
+              $('.displayLater-I').css("display", "none");
+            } if ($('.displayLater-L').css("display", "block")) {
+              $('.displayLater-L').css("display", "none");
+            }
+        })();     
+          
         watchForm();
     });
   }

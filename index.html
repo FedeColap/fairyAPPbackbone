@@ -4,89 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Fairy tales for children Info</title>
+    <title>Fairy tales for children</title>
     <link rel="stylesheet" href="main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Raleway&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav> 
         <ul class="navUl">
-            <button id="bInfo"><li>Info</li></button>
-            <button id="bRead"><li>Read</li></button>
-            <button id="bHear"><li>Hear</li></button>
-            <button id="bList"><li>List</li></button>
+            <button id="bInfo"><li class="mainLI">Info</li></button>
+            <button id="bRead"><li class="mainLI">Read</li></button>
+            <button id="bHear"><li class="mainLI">Hear</li></button>
+            <button id="bList"><li class="mainLI">List</li></button>
         </ul>
     </nav>
     <main>
+        <section class="opening">
+            <h2 class="openingH">Welcome to the world of fairy tales!</h2>
+            <p>This app has been created with love to help you discover new stories, read and even listen to some of them.<br>
+            There are thousands of tales worldwide, and of course it's not possible to collect all of them -not yet, at least- <br> 
+            but here you can find a good starting point.<br>
+            The "info" section will give you a brief description of any tale you have in mind. <br>
+            In the "read" and "listen" sections, the Fairy of Internet will choose a random story for you :-) <br>
+            Lastly, the "list" button will give you a selection of some audiotales, written by the Grimm Brothers (this time, you pick!)</p>
+            <h3 class="openingH">May you be inspired and enjoy the dive in this magical world!</h3>
+        </section>
         <section class="info displayLater-I">
             <h1>Find a fairy tale</h1>
-
             <form id="js-form-I">
-                <label for="search-term-I">Enter the name of a Fairy Tale</label>
-                <input type="text" name="search-term-I" id="js-search-term-I" required>
-                <input type="submit" value="Go!">
+                <label for="js-search-term-I">Enter the name of a fairy tale to read its brief description</label>
+                <input type="text"  id="js-search-term-I" required>
+                <input type="submit" value="Go!" class="input">
             </form>
-
             <p id="js-error-message-I" class="error-message-I"></p>
+
             <section id="results-I" class="hidden">
-            <h2>Search results</h2>
-            <ul id="results-list-I">
-            </ul>
+                <h2>Search result</h2>
+                <ul id="results-list-I">
+                </ul>
             </section>
         </section>
 
         <section class="read displayLater-R">
-                <h1>Wanna read a tale?</h1>
-        
+                <h1>Would you like to read a tale?</h1>
                 <form id="js-form-R">
-                    <label for="search-term-R">Click on the link</label>
-                    <input type="submit" value="Go!">
+                    <label for="search-term-R">We will pick it for you</label>
+                    <input id="search-term-R" type="submit" value="Go!" class="input">
                 </form>
-        
                 <p id="js-error-message-R" class="error-message-R"></p>
+
                 <section id="results-R" class="hidden">
-                <h2>Search results</h2>
-                <ul id="results-list-R">
-                </ul>
+                    <h2>Which story will you read this time? </h2>
+                    <p>Click on the link to start reading (another window will be opened for you).</p>
+                    <ul id="results-list-R">
+                    </ul>
+                    <p>Would you like to read another story? Click again on the button, and we will load another one.</p>
                 </section>
         </section>
 
         <section class="hear displayLater-H">
                 <h1>Listen!</h1>
-        
                 <form id="js-form-H">
-                    <label for="search-term-H">Pick A Tale!</label>
-                    <input type="submit" value="Go!">
+                    <label for="search-term-H">Click on the button to see your fairy tale</label>
+                    <input id="search-term-H" type="submit" value="Go!" class="input">
                 </form>
-        
                 <p id="js-error-message-H" class="error-message-H"></p>
+
                 <section id="results-H" class="hidden">
-                <h2>Search results</h2>
-                <ul id="results-list-H">
-                </ul>
+                    <h2>It's time to hear a nice story</h2>
+                    <p>Click on the Title to start listening (another window will be opened for you).</p>
+                    <ul id="results-list-H">
+                    </ul>
+                    <p>Would you like to listen another fairy tale? Click again on the button, and we will load another one.</p>
                 </section>
         </section>
 
         <section class="list displayLater-L">
                 <h1>List</h1>
-        
                 <form id="js-form-L">
-                    <label for="search-term-L">See the list of Grimm's tales</label>
-                    <input type="submit" value="See!">
+                    <label for="search-term-L">See the list of Grimms' tales</label>
+                    <input id="search-term-L" type="submit" value="See!" class="input">
                 </form>
-        
                 <p id="js-error-message-L" class="error-message-L"></p>
+
                 <section id="results-L" class="hidden">
-                <h2>Search results</h2>
-                <ul id="results-list-L">
-                </ul>
+                    <h2>These are the Grimm Brothers' fairy tales we have currently available</h2>
+                    <p>Click on a Title to start listening (another window will be opened for you).</p>
+                    <ul id="results-list-L">
+                    </ul>
                 </section>
         </section>
     </main>
     <script src="index.js"></script>
     <script src="indexFairyLink.js"></script>
     <script src="indexVoxRandom.js"></script>
-    
     <script src="indexVox.js"></script>
 </body>
 </html>
