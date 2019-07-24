@@ -24,5 +24,5 @@ Built with HTML, CSS (Google Fonts for the fonts) and JQuery.
 ***
 
 ## Link to Live page
-[link to Github Live](link)
+[link to Github Live](https://fedecolap.github.io/fairyAPPbackbone/)
 
