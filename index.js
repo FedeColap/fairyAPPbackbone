@@ -18,16 +18,26 @@ function displayResults(responseJson) {
   const pages = Object.entries(myResult);
     console.log(pages);
     console.log(pages[0][1].extract);
-  // if there are previous results, remove them
-  $('#results-list-I').empty();
-  //display the results section  
-  $('#results-I').removeClass('hidden');
-
-  $('#results-list-I').append(
-      `<li class="listResult">
-      <p>${pages[0][1].extract}</p>
-      </li>`
-  );
+    // if there are previous results, remove them
+    $('#results-list-I').empty();
+    //display the results section  
+    $('#results-I').removeClass('hidden');
+    console.log('this is ' + typeof(pages[0][1].extract));
+    //this handles the case where the search term is incorrect
+    if (pages[0][1].extract === undefined) {
+      $('#results-list-I').append(
+        `<li class="listResult">
+        <p>Sorry, I could not find what you are searching for :-( </p>
+        </li>`);
+      $('#purchase').addClass('hidden');
+    } else {
+        $('#results-list-I').append(
+            `<li class="listResult">
+            <p>${pages[0][1].extract}</p>
+            </li>`
+        );
+        $('#purchase').removeClass('hidden');
+      }
 };
 
 function getWikiInfo(searchTerm) {  

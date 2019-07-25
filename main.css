@@ -29,6 +29,9 @@ h1 {
 .displayLater-I , .displayLater-R , .displayLater-H , .displayLater-L {
     display: none;
 }
+.enfasi {
+    color: rgb(238, 74, 159);
+}
 .input {
     background-color: #DC1A00;
     color: white;
@@ -95,6 +98,7 @@ h1 {
     .navUl  {
         width: 50%;
         margin: auto;
+        margin-top: 5%;
         height:280px;
         display: flex; 
         flex-direction: column; 
@@ -102,6 +106,10 @@ h1 {
         align-items: center;
         list-style-type: none;
         padding: 0;
+    }
+    .opening {
+        margin-top: 5%;
+        font-size: 25px;
     }
 }
 /*for coumputers*/
@@ -142,6 +150,7 @@ h1 {
     .opening {
         width: 70%;
         margin-top: 10%;
+        font-size: 25px;
     }
     .read, .info, .hear, .list {
         padding-left: 5%;
