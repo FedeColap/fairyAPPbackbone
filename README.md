@@ -1,5 +1,5 @@
 
-##fairyAPPbackbone
+## fairyAPPbackbone
 
 This app is my "academic" version, used for Thinkful's assignment in dealing with 2 APIs. 
 
