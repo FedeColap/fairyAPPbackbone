@@ -27,7 +27,7 @@ function displayResults(responseJson) {
     if (pages[0][1].extract === undefined) {
       $('#results-list-I').append(
         `<li class="listResult">
-        <p>Sorry, I could not find what you are searching for :-( </p>
+        <p>Sorry, we could not find what you are searching for :-( </p>
         </li>`);
       $('#purchase').addClass('hidden');
     } else {
